@@ -11,9 +11,13 @@
 |
 */
 
+/* СТАРЫЙ РОУТ (ГЛАВНЫЙ!)
+
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +32,8 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
 
+	/* СТАРЫЕ ROUTES 
+	
     Route::get ('foo/bar', function () {
 		return 'Foo Bar';
 	});
@@ -49,5 +55,15 @@ Route::group(['middleware' => ['web']], function () {
 	Route::controller (
 		'works','WorksController'
 	);
+	*/
+	
+	Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+	
+	Route::controllers ([
+		'{id?}'=>'BaseController' //Должен быть на первом месте
+		
+	]);
 	
 });
