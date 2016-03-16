@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Мар 14 2016 г., 12:53
+-- Время создания: Мар 16 2016 г., 12:52
 -- Версия сервера: 5.5.38-log
 -- Версия PHP: 5.5.13
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `maintexts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `maintexts`
@@ -47,7 +47,8 @@ INSERT INTO `maintexts` (`id`, `name`, `body`, `url`, `slider`, `showhide`, `cre
 (3, 'О компании', '<p> Наша компания образовалась в 2011 году. Мы являемся молодой перспективной компанией на рынке IT технологий. За короткое время мы начали сотрудничать с некоторыми компаниями из СНГ, Европы, Америки.</p>\n<p> Мы профессионально занимаемся разработкой программного обеспечения, мобильных приложений (Android, IOS), смс-сервисом, созданием, продвижением, SEO оптимизацией, технической и информационной поддержкой и обслуживанием сайтов, а также предлагаем хостинг для наших клиентов.</p>\n<p> Основная задача, которую мы ставим при разработке приложений – создание эффективных решений, способствующих развитию бизнеса наших клиентов и приносящих им максимальную прибыль.</p>\n<p> Для более подробного ознакомления с нашими услугами пройдите в интересующий Вас раздел выше! </p>', 'about', '', 'show', '2016-03-14 06:57:46', '2016-03-14 06:57:46'),
 (5, 'Новости', 'Описание страницы новости', 'news', '', 'show', '2016-03-14 06:59:45', '2016-03-14 06:59:45'),
 (6, 'Контакты', '<p>ЗАО «БелХард Групп»</p>\n<p>Адрес:</p>\n<p>ул. Мельникайте, 2-709</p>\n<p>220004, г. Минск, Республика Беларусь</p>\n<p>Тел./факс: (+375-17) 226-84-26</p>', 'contacts', '', 'show', '2016-03-14 06:59:45', '2016-03-14 06:59:45'),
-(7, 'Где купить', 'Описание страницы где купить', 'buy', '', 'show', '2016-03-14 06:59:45', '2016-03-14 06:59:45');
+(7, 'Где купить', 'Описание страницы где купить', 'buy', '', 'show', '2016-03-14 06:59:45', '2016-03-14 06:59:45'),
+(8, 'Web-sites', 'Test', 'web', '', 'show', '2016-03-16 08:41:26', '2016-03-16 08:41:26');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'max', 'max@max.ru', '$2y$10$IVR/GCp3Nf3QkW1Nb7qOpu4QfMsPFGOh0EMwP/FT8EcMJbpxSlR7.', NULL, '2016-03-16 08:28:57', '2016-03-16 08:28:57');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
