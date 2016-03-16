@@ -55,6 +55,14 @@ Route::group(['middleware' => ['web']], function () {
 	Route::controller (
 		'works','WorksController'
 	);
+	
+	
+	Route::get('/', function()
+	{
+		return 'Hello world!';
+	});
+	
+	Route::get('user/{id}', 'UserController@index');
 	*/
 	
 	Route::auth();

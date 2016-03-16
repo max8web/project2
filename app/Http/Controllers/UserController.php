@@ -10,5 +10,5 @@ class UserController extends Controller
 {
     public function index ($id=null) {
 		return 'user'.$id;
-	}
+	} 
 }
